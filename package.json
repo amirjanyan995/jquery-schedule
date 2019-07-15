@@ -1,7 +1,7 @@
 {
-  "title": "jQuery Schedule",
-  "name": "jquery-schedule",
-  "version": "2.2.0",
+  "title": "jQuery Schedule customized",
+  "name": "jquery-schedule-customized",
+  "version": "0.0.2",
   "description": "A schedule management with jQuery.",
   "keywords": [
     "schedule",
@@ -15,14 +15,14 @@
     "name": "Thomas BORUSZEWSKI",
     "email": "yehzuna@outlook.com"
   },
-  "homepage": "https://github.com/Yehzuna/jquery-schedule",
+  "homepage": "https://github.com/amirjanyan995/jquery-schedule",
   "main": "dist/jquery.schedule.min.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yehzuna/jquery-schedule.git"
+    "url": "https://github.com/amirjanyan995/jquery-schedule.git"
   },
   "bugs": {
-    "url": "https://github.com/Yehzuna/jquery-schedule/issues"
+    "url": "https://github.com/amirjanyan995/jquery-schedule/issues"
   },
   "license": "MIT",
   "devDependencies": {
