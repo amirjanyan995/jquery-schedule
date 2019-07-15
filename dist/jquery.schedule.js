@@ -349,14 +349,18 @@
 					drag: function (event, ui) {
 						$('.jqs-period-time', ui.helper).text($this.periodDrag(ui));
 						$this.closeOptions();
+						
+						console.log('drag');
 					},
 					stop: function (event, ui) {
+						console.log('drag stop 0');
 						if (!$this.isValid($(ui.helper))) {
 							console.error('Invalid position');
 							
 							$(ui.helper).css('top', Math.round(ui.originalPosition.top));
 						} else {
 							$this.settings.onPeriodDragged.call($this, period, $this.element);
+							console.log('drag stop');
 						}
 					}
 				}).resizable({
@@ -368,8 +372,10 @@
 						
 						$this.periodText(period);
 						$this.closeOptions();
+						console.log('resize');
 					},
 					stop: function (event, ui) {
+						console.log('resize stop 0');
 						if (!$this.isValid($(ui.helper))) {
 							console.error('Invalid position');
 							
@@ -379,6 +385,7 @@
 							});
 						} else {
 							$this.settings.onPeriodResized.call($this, period, $this.element);
+							console.log('resize stop');
 						}
 					}
 				});

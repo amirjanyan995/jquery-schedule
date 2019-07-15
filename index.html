@@ -257,8 +257,8 @@ $('#schedule5').jqs({
 		});
 
 		$('#schedule3').jqs({
-			exportingAdditionalInformation: true,
-			allowOption: true,
+			// exportingAdditionalInformation: true,
+			// allowOption: true,
 			onInit: function () {
 				$('#logs').val('onInit fire !\n' + $('#logs').val());
 			},
@@ -270,6 +270,8 @@ $('#schedule5').jqs({
 			},
 			onAfterRemovePeriod: function () {
 				$('#logs').val('onAfterRemovePeriod fire !\n' + $('#logs').val());
+
+				$('#result').val($('#schedule3').jqs('export'));
 			},
 			onDuplicatePeriod: function () {
 				$('#logs').val('onDuplicatePeriod fire !\n' + $('#logs').val());
@@ -279,9 +281,13 @@ $('#schedule5').jqs({
 			},
 			onPeriodDragged: function () {
 				$('#logs').val('onPeriodDragged fire !\n' + $('#logs').val());
+
+				$('#result').val($('#schedule3').jqs('export'));
 			},
 			onPeriodResized: function () {
 				$('#logs').val('onPeriodResized fire !\n' + $('#logs').val());
+
+				$('#result').val($('#schedule3').jqs('export'));
 			},
 		});
 
