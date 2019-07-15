@@ -96,7 +96,7 @@ $('#schedule3').jqs({
     $('#logs').val('onAddPeriod fire !\n' + $('#logs').val());
   },
   onRemovePeriod: function () {
-    $('#logs').val('onRemovePeriod fire !\n' + $('#logs').val());
+    $('#logs').val('onBeforeRemovePeriod fire !\n' + $('#logs').val());
   },
   onDuplicatePeriod: function () {
     $('#logs').val('onDuplicatePeriod fire !\n' + $('#logs').val());
@@ -257,14 +257,19 @@ $('#schedule5').jqs({
 		});
 
 		$('#schedule3').jqs({
+			exportingAdditionalInformation: true,
+			allowOption: true,
 			onInit: function () {
 				$('#logs').val('onInit fire !\n' + $('#logs').val());
 			},
 			onAddPeriod: function () {
 				$('#logs').val('onAddPeriod fire !\n' + $('#logs').val());
 			},
-			onRemovePeriod: function () {
-				$('#logs').val('onRemovePeriod fire !\n' + $('#logs').val());
+			onBeforeRemovePeriod: function () {
+				$('#logs').val('onBeforeRemovePeriod fire !\n' + $('#logs').val());
+			},
+			onAfterRemovePeriod: function () {
+				$('#logs').val('onAfterRemovePeriod fire !\n' + $('#logs').val());
 			},
 			onDuplicatePeriod: function () {
 				$('#logs').val('onDuplicatePeriod fire !\n' + $('#logs').val());

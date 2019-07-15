@@ -1,0 +1,78 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js login
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  8.10.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/share/yarn/lib/cli.js:125850:13)
+      at emitNone (events.js:106:13)
+      at Interface.emit (events.js:208:7)
+      at Interface._ttyWrite (readline.js:775:16)
+      at ReadStream.onkeypress (readline.js:160:10)
+      at emitTwo (events.js:126:13)
+      at ReadStream.emit (events.js:214:7)
+      at emitKeys (internal/readline.js:420:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1011:36)
+
+npm manifest: 
+  {
+    "title": "jQuery Schedule customized",
+    "name": "jquery-schedule-customized",
+    "version": "0.0.1",
+    "description": "A schedule management with jQuery.",
+    "keywords": [
+      "schedule",
+      "scheduler",
+      "management",
+      "calendar",
+      "jquery",
+      "plugin"
+    ],
+    "author": {
+      "name": "Thomas BORUSZEWSKI",
+      "email": "yehzuna@outlook.com"
+    },
+    "homepage": "https://github.com/amirjanyan995/jquery-schedule",
+    "main": "dist/jquery.schedule.min.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/amirjanyan995/jquery-schedule.git"
+    },
+    "bugs": {
+      "url": "https://github.com/amirjanyan995/jquery-schedule/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "grunt": "^1.0.1",
+      "grunt-banner": "^0.6.0",
+      "grunt-contrib-clean": "^1.1.0",
+      "grunt-contrib-compass": "^1.1.1",
+      "grunt-contrib-copy": "^1.0.0",
+      "grunt-contrib-jshint": "^1.1.0",
+      "grunt-contrib-uglify": "^3.2.1",
+      "grunt-contrib-watch": "^1.0.0",
+      "grunt-remove-logging": "^0.2.0"
+    },
+    "dependencies": {
+      "jquery": "^3.2.1",
+      "jquery-ui": "^1.12.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
