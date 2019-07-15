@@ -606,6 +606,9 @@
         start: this.periodFormat(start),
         end: this.periodFormat(end),
         title: $('.jqs-period-title', period).text(),
+        backgroundColor: $('.jqs-period-container', period).css('background-color'),
+        borderColor: $('.jqs-period-container', period).css('border-top-color'),
+        textColor: $('.jqs-period-container', period).css('color')
       };
     },
     
