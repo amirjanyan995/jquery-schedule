@@ -615,7 +615,7 @@
 			var exportedObject = {
 				start: this.periodFormat(start),
 				end: this.periodFormat(end),
-				title: $('.jqs-period-title', period).text()
+				// title: $('.jqs-period-title', period).text()
 			};
 			
 			if (this.settings.exportingAdditionalInformation) {
@@ -810,13 +810,16 @@
 				$('.jqs-period', day).each(function (index, period) {
 					periods.push($this.periodData($(period)));
 				});
+				data.push(periods);
 				
-				data.push({
-					day: index,
-					periods: periods
-				});
+				// data.push({
+				// 	day: index,
+				// 	periods: periods
+				// });
 			});
 			
+				console.log(data);
+				console.log(JSON.stringify(data));
 			return JSON.stringify(data);
 		},
 		
@@ -830,8 +833,9 @@
 			var dataImport = args[1];
 			var ret = [];
 			$.each(dataImport, function (index, data) {
-				$.each(data.periods, function (index, period) {
-					var parent = $('.jqs-day', $this.element).eq(data.day);
+				var dayIndex = index +1;
+				$.each(data, function (index, period) {
+					var parent = $('.jqs-day', $this.element).eq(dayIndex);
 					var options = {};
 					var height, position;
 					if ($.isArray(period)) {
@@ -842,24 +846,20 @@
 						height = $this.positionFormat(period.end);
 						options = period;
 					}
-					
+
 					if (height === 0) {
 						height = $this.periodHeight;
 					}
-					
+
 					var status = true;
 					if (!$this.add(parent, position, height - position, options)) {
 						status = false;
 					}
-					
-					ret.push({
-						day: data.day,
-						period: [
+
+					ret.push([
 							$this.periodFormat(position),
 							$this.periodFormat(height)
-						],
-						status: status
-					});
+						]);
 				});
 			});
 			

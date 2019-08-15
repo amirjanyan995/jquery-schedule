@@ -340,32 +340,13 @@ $('#schedule5').jqs({
 		});
 
 		$('#import').click(function () {
-			var ret = $('#schedule3').jqs('import', [
-				{
-					day: 1,
-					periods: [
-						['8:00', '10:00'] // Compact
-					]
-				}, {
-					day: 2,
-					periods: [
-						['20:00', '00:00'],
-						['20:00', '22:00'] // Invalid period, not displayed
-					]
-				}, {
-					day: 4,
-					periods: [
-						{ // Full
-							start: '10:00',
-							end: '12:00',
-							title: 'A black period',
-							backgroundColor: '#000',
-							borderColor: '#000',
-							textColor: '#fff'
-						}
-					]
-				}
-			]);
+			var ret = $('#schedule3').jqs('import', [[], [{"start": "08:00", "end": "10:00"}], [{
+				"start": "20:00",
+				"end": "00:00"
+			}, {"start": "02:00", "end": "05:30"}], [], [{"start": "10:00", "end": "12:00"}, {
+				"start": "02:00",
+				"end": "06:00"
+			}], [{"start": "01:30", "end": "05:30"}], []]);
 
 			$('#result').val(ret);
 		});
