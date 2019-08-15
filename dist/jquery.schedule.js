@@ -810,7 +810,6 @@
 			$('.jqs-day', $this.element).each(function (index, day) {
 				var periods = [];
 				$('.jqs-period', day).each(function (index, period) {
-					coonsole.log(day)
 					periods.push($this.periodData($(period)));
 				});
 				data.push(periods);
