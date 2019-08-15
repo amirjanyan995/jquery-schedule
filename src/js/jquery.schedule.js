@@ -611,7 +611,6 @@
 		 * @returns {[*,*]}
 		 */
 		periodData: function (period) {
-			console.log(period.position())
 			var start = Math.round(period.position().top / this.periodPosition);
 			var end = Math.round((period.height() + period.position().top) / this.periodPosition);
 			

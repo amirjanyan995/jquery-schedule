@@ -262,9 +262,9 @@
 				var $this = this;
 				
 				$.each(this.settings.data, function (index, data) {
-					$.each(data.periods, function (index, period) {
-						
-						var parent = $('.jqs-day', $this.element).eq(data.day);
+					var dayIndex = index;
+					$.each(data, function (index, period) {
+						var parent = $('.jqs-day', $this.element).eq(dayIndex);
 						var options = {};
 						var height, position;
 						if ($.isArray(period)) {
@@ -280,7 +280,7 @@
 							height = $this.periodHeight;
 						}
 						
-						$this.add(parent, position, height - position, options);
+						$this.add(parent, position, height - position, options, true);
 					});
 				});
 			}
@@ -293,7 +293,7 @@
 		 * @param {int} height
 		 * @param options
 		 */
-		add: function (parent, position, height, options) {
+		add: function (parent, position, height, options, isImport = false) {
 			
 			if (height <= 0 || position >= this.periodHeight) {
 				console.error('Invalid period');
@@ -397,7 +397,9 @@
 				}
 			}
 			
-			this.settings.onAddPeriod.call(this, period, this.element);
+			if (!isImport) {
+				this.settings.onAddPeriod.call(this, period, this.element);
+			}
 			
 			return true;
 		},
@@ -808,11 +810,11 @@
 			$('.jqs-day', $this.element).each(function (index, day) {
 				var periods = [];
 				$('.jqs-period', day).each(function (index, period) {
+					coonsole.log(day)
 					periods.push($this.periodData($(period)));
 				});
 				data.push(periods);
 			});
-			
 			return JSON.stringify(data);
 		},
 		
@@ -839,20 +841,20 @@
 						height = $this.positionFormat(period.end);
 						options = period;
 					}
-
+					
 					if (height === 0) {
 						height = $this.periodHeight;
 					}
-
+					
 					var status = true;
-					if (!$this.add(parent, position, height - position, options)) {
+					if (!$this.add(parent, position, height - position, options, true)) {
 						status = false;
 					}
-
+					
 					ret.push([
-							$this.periodFormat(position),
-							$this.periodFormat(height)
-						]);
+						$this.periodFormat(position),
+						$this.periodFormat(height)
+					]);
 				});
 			});
 			
