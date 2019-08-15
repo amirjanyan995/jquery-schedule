@@ -811,15 +811,8 @@
 					periods.push($this.periodData($(period)));
 				});
 				data.push(periods);
-				
-				// data.push({
-				// 	day: index,
-				// 	periods: periods
-				// });
 			});
 			
-				console.log(data);
-				console.log(JSON.stringify(data));
 			return JSON.stringify(data);
 		},
 		
