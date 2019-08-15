@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js login
+  /usr/bin/node /usr/share/yarn/bin/yarn.js publish
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -30,7 +30,7 @@ npm manifest:
   {
     "title": "jQuery Schedule customized",
     "name": "jquery-schedule-customized",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "description": "A schedule management with jQuery.",
     "keywords": [
       "schedule",

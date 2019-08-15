@@ -340,13 +340,7 @@ $('#schedule5').jqs({
 		});
 
 		$('#import').click(function () {
-			var ret = $('#schedule3').jqs('import', [[], [{"start": "08:00", "end": "10:00"}], [{
-				"start": "20:00",
-				"end": "00:00"
-			}, {"start": "02:00", "end": "05:30"}], [], [{"start": "10:00", "end": "12:00"}, {
-				"start": "02:00",
-				"end": "06:00"
-			}], [{"start": "01:30", "end": "05:30"}], []]);
+			var ret = $('#schedule3').jqs('import', [[{"start":"9:00 AM","end":"11:30 PM"}],[{"start":"4:00 AM","end":"5:00 PM"}],[{"start":"10:00 AM","end":"3:30 PM"}],[],[],[],[]]);
 
 			$('#result').val(ret);
 		});

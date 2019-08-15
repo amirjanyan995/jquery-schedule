@@ -833,7 +833,7 @@
 			var dataImport = args[1];
 			var ret = [];
 			$.each(dataImport, function (index, data) {
-				var dayIndex = index +1;
+				var dayIndex = index;
 				$.each(data, function (index, period) {
 					var parent = $('.jqs-day', $this.element).eq(dayIndex);
 					var options = {};
